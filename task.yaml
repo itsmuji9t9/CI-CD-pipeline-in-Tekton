@@ -1,0 +1,10 @@
+apiVersion: tekton.dev/v1beta1 
+kind: task
+Metadata:
+  name: hello-world
+spec:
+   steps:
+       - name: echo
+         image: alpine:3
+         command: [/bin/echo]
+         args: ["hello world"] 

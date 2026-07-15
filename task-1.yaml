@@ -1,0 +1,15 @@
+apiVersion: tekton.dev/v1beta1 
+kind: Task
+metadata:
+  name: echo
+spec:
+   params:
+      - name: message
+        type: string
+        description: "anything u want"
+
+   steps:
+       - name: echo-message
+         image: alpine:3
+         command: [/bin/echo]
+         args: ["$(params.message)"] 
